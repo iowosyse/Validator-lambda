@@ -11,6 +11,9 @@ public class Main {
                 return false;
             }
 
+            if (email.indexOf('@') == 0)
+                return false;
+
             int counter = 0;
             for (int i = 0; i < email.length(); i++) {
                 if (email.charAt(i) == '@')
