@@ -1,10 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        String[] validEmails = new String[4];
-        validEmails[0] = "@gmail.com";
-        validEmails[1] = "@outlook.com";
-        validEmails[2] = "@hotmail.com";
-        validEmails[3] = "@morelia.tecnm.mx";
 
         Validator emailValidator = (email) -> {
             if (!email.contains("@")) {
@@ -22,16 +17,23 @@ public class Main {
             if (counter > 1)
                 return false;
 
-            return stringEndsWithOneOf( email, validEmails);
+            return stringEndsWithOneOfValid( email);
         } ;
 
         System.out.println(emailValidator.validate("candeChambas@gmail.com@outlook.com"));
+        System.out.println(emailValidator.validate("@hotmail.com"));
         System.out.println(emailValidator.validate("l23121067@morelia.tecnm.mx"));
 
     }
 
-    public static boolean stringEndsWithOneOf( String toValidate, String[] arr) {
-        for (String s : arr) {
+    public static boolean stringEndsWithOneOfValid(String toValidate) {
+        String[] validEmails = new String[4];
+        validEmails[0] = "@gmail.com";
+        validEmails[1] = "@outlook.com";
+        validEmails[2] = "@hotmail.com";
+        validEmails[3] = "@morelia.tecnm.mx";
+
+        for (String s : validEmails) {
             if (toValidate.endsWith(s))
                 return true;
         }
