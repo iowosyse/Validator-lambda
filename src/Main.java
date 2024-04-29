@@ -17,12 +17,12 @@ public class Main {
             if (counter > 1)
                 return false;
 
-            return stringEndsWithOneOfValid( email);
-        } ;
+            return stringEndsWithOneOfValid(email);
+        };
 
-        System.out.println(emailValidator.validate("candeChambas@gmail.com@outlook.com"));
-        System.out.println(emailValidator.validate("@hotmail.com"));
-        System.out.println(emailValidator.validate("l23121067@morelia.tecnm.mx"));
+        System.out.println(emailValidator.validate("candeChambas@gmail.com@outlook.com")); //false
+        System.out.println(emailValidator.validate("@hotmail.com")); //false
+        System.out.println(emailValidator.validate("l23121067@morelia.tecnm.mx")); //true
 
     }
 
